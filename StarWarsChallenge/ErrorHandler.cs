@@ -34,7 +34,7 @@ namespace StarWarsChallenge
         /// <returns>
         /// Description
         /// </returns>
-        public static string GetEnumDescription(Enum value)
+        private static string GetEnumDescription(Enum value)
         {
             FieldInfo fi = value.GetType().GetField(value.ToString());
 
@@ -50,6 +50,13 @@ namespace StarWarsChallenge
                 return value.ToString();
         }
 
+        /// <summary>
+        /// Takes in the errorCode and returns the custom error description
+        /// </summary>
+        /// <param name="errorCode">Error Code</param>
+        /// <returns>
+        /// Error Description
+        /// </returns>
         public static string ReturnErrorDescription(int errorCode)
         {
             return GetEnumDescription((ErrorCodes)errorCode);
